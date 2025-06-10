@@ -17,7 +17,7 @@ class Deck{
  * 1 
  */
 public Deck(){
-    String[] type = {"1","2","3","4","5","6","7","8","9","Flip","Reverse","Skip","Draw"};
+    String[] type = {"1","2","3","4","5","6","7","8","9","Flip","Reverse","Skip","Draw1", "1","2","3","4","5","6","7","8","9","Flip","Reverse","Skip","Draw1"};
     String[] colour = {"Red", "Blue", "Yellow", "Green"};
     this.deck = new ArrayList<Card>();
     for(int i = 0; i < colour.length; i++){
@@ -26,8 +26,10 @@ public Deck(){
             this.deck.add(new Card(colour[i], type[j]));
         }
     }
-    this.deck.add(new Card("Wild","Wild"));
-    this.deck.add(new Card("Wild","Wild"));
+    this.deck.add(new Card("Wild","colourChange"));
+    this.deck.add(new Card("Wild","colourChange"));
+    this.deck.add(new Card("Wild","draw2"));
+    this.deck.add(new Card("Wild","draw2"));
 }
 
 /** 

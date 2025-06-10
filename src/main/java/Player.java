@@ -107,13 +107,15 @@ public class Player{
         return false;
     }
 
+
+    
     public void organize(){
 
     }
 
 
 /**
-* Will print out their name, and hand of cards
+* Will print out their name and hand of cards
 * @return returns the player's name, and hand of cards
 */
     public String toString(){
