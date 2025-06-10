@@ -1,10 +1,22 @@
+/**
+ * The Deck class represents a deck of cards that can be drawn from and shuffled
+ * It allows the deck of cards to be shuffled, drawn and added
+ * @author Kelly Fu, Olivia Su, Katherine Zhou, Cindy Pan
+ * @version 17.0.1
+ */
+
 import java.util.ArrayList;
+
 
 class Deck{
     private ArrayList<Card> deck;
 
-public Deck(){
 
+/**
+ * Constructs an unshuffled deck of cards 
+ * 1 
+ */
+public Deck(){
     String[] type = {"1","2","3","4","5","6","7","8","9","Flip","Reverse","Skip","Draw"};
     String[] colour = {"Red", "Blue", "Yellow", "Green"};
     this.deck = new ArrayList<Card>();
@@ -17,6 +29,14 @@ public Deck(){
     this.deck.add(new Card("Wild","Wild"));
     this.deck.add(new Card("Wild","Wild"));
 }
+
+/** 
+ * Returns the number of cards in the deck
+ * @return the length/size of the deck
+ */
+    public int size(){
+        return this.deck.size();
+    }
 
 public ArrayList<Card> getDeck(){
     return this.deck;
