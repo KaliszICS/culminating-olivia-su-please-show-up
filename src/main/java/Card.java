@@ -9,12 +9,12 @@ class Card{
     }
 
     public String getColour(){
-        return colour;
+        return this.colour;
 
     }
 
     public String getType(){
-        return type;
+        return this.type;
     }
 
     @Override
@@ -27,8 +27,11 @@ class Card{
         return false;
     }
     Card card = (Card) obj;
-        if (this.colour.equals(card.colour) && this.type.equals(card.type)){
-
+        if (this.colour.equals(card.colour) || this.type.equals(card.type)){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 }

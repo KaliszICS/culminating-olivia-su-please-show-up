@@ -1,7 +1,9 @@
 public class Main {
 
 	public static void main(String args[]) {
-
+		Deck d = new Deck();
+		d.getDeck();
+		System.out.println(d.toString());
 	}
 
 }
