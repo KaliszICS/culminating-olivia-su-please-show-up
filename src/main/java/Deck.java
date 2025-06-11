@@ -98,6 +98,7 @@ public Deck(){
         } 
 
     public void shuffle(){
+        
         for(int i = 0; i <= 108 && i < this.frontDeck.size(); i++){
             this.shuffleNum.add(i);
         }
@@ -109,28 +110,20 @@ public Deck(){
                 this.shuffleNum.set(k, temp);
 
         ArrayList<Card> shuffleFrontDeck = new ArrayList<>(this.shuffleNum.size());
+        ArrayList<Card> shuffleBackDeck = new ArrayList<>(this.shuffleNum.size());
+
         for (int a = 0; a < this.frontDeck.size(); a++){
             int index = shuffleNum.get(a);
-            Card card = this.frontDeck.get(a);
-            shuffleFrontDeck.set(index, card);
+            shuffleFrontDeck.set(index, this.frontDeck.get(a));
+            shuffleBackDeck.set(index, this.backDeck.get(a));
 
         }
                     
         this.frontDeck = shuffleFrontDeck;
-
-        }
-
-        ArrayList<Card> shuffleBackDeck = new ArrayList<>(this.shuffleNum.size());
-        for (int a = 0; a < this.frontDeck.size(); a++){
-            int index = shuffleNum.get(a);
-            Card card = this.backDeck.get(a);
-            shuffleBackDeck.set(index, card);
-
-        }
-                    
         this.backDeck = shuffleBackDeck;
 
         }
+        
     }
 }
 
