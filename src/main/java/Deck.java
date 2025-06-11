@@ -79,13 +79,22 @@ public Deck(){
         return out;
     }
 
-    public Card draw(){
-        if(deck == null || deck.size == 0){
+    public Card draw(boolean isFlip){
+        if(frontDeck == null || frontDeck.size() == 0){
             return null;
         }
 
-        return this.deck.remove(0);
 
+        Card remove = this.frontDeck.get(0);
+        Card removeBack = this.backDeck.get(0);
+        this.frontDeck.remove(0);
+        this.backDeck.remove(0);
+        if(isFlip == true){
+        return removeBack;
+        }
+        else{
+        return remove;
+        }
         } 
 
     public void shuffle(){
