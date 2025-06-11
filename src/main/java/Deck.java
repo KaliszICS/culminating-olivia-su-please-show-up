@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 
 class Deck{
-    private ArrayList<Card> deck;
+    private ArrayList<Card> frontDeck;
+    private ArrayList<Card> backDeck;
 
 
 /**
@@ -23,6 +24,7 @@ public Deck(){
     for(int i = 0; i < colour.length; i++){
         for (int j = 0; j< type.length; j++){
             this.deck.add(new Card(colour[i], type[j]));
+            // ADD THE CARD AGAIN
             this.deck.add(new Card(colour[i], type[j]));
         }
     }
