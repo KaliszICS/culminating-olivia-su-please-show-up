@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 /**
  * 
- * The player class is the player in the game with a name, age, and hands
+ * The player class is the player in the game with a name and hands
  * 
  * @author Kelly Fu, Olivia Su, Cindy Pan, Katherine Zhou
  * @version 17.0.1
