@@ -11,8 +11,7 @@ import java.util.ArrayList;
 class Deck{
     private ArrayList<Card> frontDeck;
     private ArrayList<Card> backDeck;
-    private ArrayList<Card> discardFront;
-    private ArrayList<Card> discardBack;
+    
 
  
 
@@ -57,18 +56,29 @@ public Deck(){
     this.backDeck.add(new Card("Wild","drawColour"));
 }
 
-   
 
-/** 
+    public ArrayList<Card> getFrontDeck(){
+        return this.frontDeck;
+    }
+    
+    public ArrayList<Card> getBackDeck(){
+        return this.backDeck;
+    }
+
+    public void setFrontDeck(ArrayList<Card> newDeck){
+        this.frontDeck = newDeck; 
+    }
+
+    public void setBackDeck(ArrayList<Card> newDeck){
+        this.backDeck = newDeck;
+    }
+
+    /** 
  * Returns the number of cards in the deck
  * @return the length/size of the deck
  */
     public int size(){
         return this.frontDeck.size();
-    }
-
-    public ArrayList<Card> getFrontDeck(){
-        return this.frontDeck;
     }
 
     public String toString(){
