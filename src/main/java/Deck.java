@@ -4,7 +4,7 @@
  * @author Kelly Fu, Olivia Su, Katherine Zhou, Cindy Pan
  * @version 17.0.1
  */
-
+import java.util.Random;
 import java.util.ArrayList;
 
 
@@ -13,9 +13,13 @@ class Deck{
     private ArrayList<Card> backDeck;
     private ArrayList<Card> discardFront;
     private ArrayList<Card> discardBack;
-    private ArrayList<Integer> shuffleNum;
+
  
 
+ public Deck(ArrayList<Card> newDeck, ArrayList<Card> newBack){
+        this.frontDeck = (ArrayList)newDeck.clone();
+        this.backDeck = (ArrayList)newBack.clone();
+    }
 /**
  * Constructs an unshuffled deck of cards 
  * 1 
@@ -98,32 +102,21 @@ public Deck(){
         } 
 
     public void shuffle(){
-        
-        for(int i = 0; i <= 108 && i < this.frontDeck.size(); i++){
-            this.shuffleNum.add(i);
+         Random rand = new Random();
+         ArrayList<Card> tempFront= new ArrayList<>(this.frontDeck.size());
+         ArrayList<Card> tempBack = new ArrayList<>(this.backDeck.size());
+         int help = this.frontDeck.size();
+         for (int i = 0; i<help; i++){
+            int index = rand.nextInt(help-i);
+            tempFront.add(i, this.frontDeck.get(index));
+            tempBack.add(i, this.backDeck.get(index));
+            this.frontDeck.remove(index);
+            this.backDeck.remove(index);
+
+            
         }
-
-        for (int j = 0; j < this.shuffleNum.size(); j++) {
-                int k = ((int)(Math.random() * (j + 1)));
-                int temp = this.shuffleNum.get(j);
-                this.shuffleNum.set(j, this.shuffleNum.get(k));
-                this.shuffleNum.set(k, temp);
-
-        ArrayList<Card> shuffleFrontDeck = new ArrayList<>(this.shuffleNum.size());
-        ArrayList<Card> shuffleBackDeck = new ArrayList<>(this.shuffleNum.size());
-
-        for (int a = 0; a < this.frontDeck.size(); a++){
-            int index = shuffleNum.get(a);
-            shuffleFrontDeck.set(index, this.frontDeck.get(a));
-            shuffleBackDeck.set(index, this.backDeck.get(a));
-
-        }
-                    
-        this.frontDeck = shuffleFrontDeck;
-        this.backDeck = shuffleBackDeck;
-
-        }
-        
+            this.frontDeck = tempFront;
+            this.backDeck = tempBack;        
     }
 }
 
