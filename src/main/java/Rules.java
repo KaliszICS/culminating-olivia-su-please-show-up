@@ -1,5 +1,5 @@
 /**
-<<<<<<< HEAD
+
  * The Rule class handles special rules and effects during the game.
  */
 
@@ -10,37 +10,22 @@ public class Rules {
     public Opponent computer;
     public Deck deck;
 
-    public Rules(Player player, Opponent opponent, Deck deck){
-        this.computer = opponent;
-        this.deck = deck;
-        this.player = player;
-=======
- * 
- * The rules class is 
- * 
- * @author Kelly Fu, Olivia Su, Cindy Pan, Katherine Zhou
- * @version 17.0.1
- */
-
-public class Rules {
-
-    private boolean isReversed;
-    private boolean isFlip;
-    private Player[] players;
-
-/**
+    /**
 * Takes 
 * @param isReversed a boolean to check if we are playing in reverse
 * @param isFlip a boolean to check if we are playing on the front or the back of the deck
 * @param players 
 */
 
-    public Rules(Player[] players){
-        this.players = players;
->>>>>>> 92c1fac (update)
+    public Rules(boolean isReversed, boolean isFlip, Player player, Opponent opponent, Deck deck){
         this.isReversed = false;
         this.isFlip = false;
+        this.player = player;
+        this.computer = opponent;
+        this.deck = deck;
+
     }
+
 
     public boolean getIsReversed(){
         return this.isReversed;
