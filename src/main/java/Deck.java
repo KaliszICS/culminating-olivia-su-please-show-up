@@ -13,7 +13,7 @@ class Deck{
     private ArrayList<Card> backDeck;
     private ArrayList<Card> discardFront;
     private ArrayList<Card> discardBack;
-    private ArrayList<Card> shuffleNum;
+    private ArrayList<Integer> shuffleNum;
  
 
 /**
@@ -98,16 +98,38 @@ public Deck(){
         } 
 
     public void shuffle(){
-        for(int i = 0; i <= 108 && this.deck.size; i++){
-            shuffleNum.add(i);
+        for(int i = 0; i <= 108 && i < this.frontDeck.size(); i++){
+            this.shuffleNum.add(i);
         }
 
-        for (int j = 0; j < shuffleNum.size(); j++) {
-                int k = (int)(Math.random() * (j + 1));
-                    int temp = shuffleNum.get(j);
-                    shuffleNum.set(j, shuffleNum.get(k));
-                    shuffleNum.set(k, temp);
+        for (int j = 0; j < this.shuffleNum.size(); j++) {
+                int k = ((int)(Math.random() * (j + 1)));
+                int temp = this.shuffleNum.get(j);
+                this.shuffleNum.set(j, this.shuffleNum.get(k));
+                this.shuffleNum.set(k, temp);
+
+        ArrayList<Card> shuffleFrontDeck = new ArrayList<>(this.shuffleNum.size());
+        for (int a = 0; a < this.frontDeck.size(); a++){
+            int index = shuffleNum.get(a);
+            Card card = this.frontDeck.get(a);
+            shuffleFrontDeck.set(index, card);
+
+        }
                     
+        this.frontDeck = shuffleFrontDeck;
+
+        }
+
+        ArrayList<Card> shuffleBackDeck = new ArrayList<>(this.shuffleNum.size());
+        for (int a = 0; a < this.frontDeck.size(); a++){
+            int index = shuffleNum.get(a);
+            Card card = this.backDeck.get(a);
+            shuffleBackDeck.set(index, card);
+
+        }
+                    
+        this.backDeck = shuffleBackDeck;
+
         }
     }
 }
