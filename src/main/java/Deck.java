@@ -21,8 +21,8 @@ class Deck{
      */
 
  public Deck(ArrayList<Card> newDeck, ArrayList<Card> newBack){
-        this.frontDeck = (ArrayList)newDeck.clone();
-        this.backDeck = (ArrayList)newBack.clone();
+        this.frontDeck = newDeck;
+        this.backDeck = newBack;
     }
 
      /**

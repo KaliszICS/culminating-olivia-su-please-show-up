@@ -1,6 +1,6 @@
 /**
-* The Rules class handles special rules and effects during the game
- * It manages status flags like reversed order and flip mode, and provides methods to apply effects like skipping players, adding cards, and toggling game states
+* The Rules class handles special rules and effects during the game.
+ * It manages status flags like reversed order and flip mode, and provides methods to apply effects like skipping players, adding cards, and toggling game states.
  * @author Kelly Fu, Olivia Su, Katherine Zhou, Cindy Pan
  * @version 17.0.1
  */
