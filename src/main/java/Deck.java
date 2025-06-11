@@ -74,9 +74,9 @@ public Deck(){
     }
 
     /** 
- * Returns the number of cards in the deck
- * @return the length/size of the deck
- */
+    * Returns the number of cards in the deck
+    * @return the length/size of the deck
+    */
     public int size(boolean isFlip){
         if(isFlip){
             return this.backDeck.size();
