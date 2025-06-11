@@ -32,8 +32,6 @@ public class Player{
         }
 
         // get the shuffled deck and draw cards to get the hand
-
-
     }
 
 /**
@@ -56,7 +54,6 @@ public class Player{
  * returns the backside of the cards in the player's hands
  * @return returns the player's hand at the back
  */
-
     public ArrayList<Card> getBackHand(){
         return this.backHand;
     }
@@ -98,6 +95,10 @@ public class Player{
         return tempFront.toString()+" "+tempBack.toString()+" removed.";
     }
 
+    /**
+     * Organizes the front side of your hand by colour
+     * @param card that will be moved
+     */
     public void organizeFront(){
        
        for(int i = 0; i < this.frontHand.size() - 1; i++){
@@ -114,6 +115,11 @@ public class Player{
        }
     }
 
+
+    /**
+     * Back set of cards are organized by colour
+     * @param card the card that is being moved
+     */
     public void organizeBack(){
        
        for(int i = 0; i < this.backHand.size() - 1; i++){
