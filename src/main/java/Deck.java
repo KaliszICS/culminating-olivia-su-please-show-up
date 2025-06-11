@@ -11,7 +11,10 @@ import java.util.ArrayList;
 class Deck{
     private ArrayList<Card> frontDeck;
     private ArrayList<Card> backDeck;
-
+    private ArrayList<Card> discardFront;
+    private ArrayList<Card> discardBack;
+    private ArrayList<Card> shuffleNum;
+ 
 
 /**
  * Constructs an unshuffled deck of cards 
@@ -58,20 +61,39 @@ public Deck(){
         return this.deck.size();
     }
 
-public ArrayList<Card> getDeck(){
-    return this.deck;
-}
-
-public String toString(){
-    String out = "";
-    for(int i = 0; i<this.deck.size(); i++){
-        out = out + this.deck.get(i) +", ";
+    public ArrayList<Card> getDeck(){
+        return this.deck;
     }
-    return out;
+
+    public String toString(){
+        String out = "";
+        for(int i = 0; i<this.deck.size(); i++){
+            out = out + this.deck.get(i) +", ";
+        }
+        return out;
+    }
+
+    public Card draw(){
+        if(deck == null || deck.size == 0){
+            return null;
+        }
+
+        return this.deck.remove(0);
+
+        } 
+
+    public void shuffle(){
+        for(int i = 0; i <= 108 && this.deck.size; i++){
+            shuffleNum.add(i);
+        }
+
+        for (int j = 0; j < shuffleNum.size(); j++) {
+                int k = (int)(Math.random() * (j + 1));
+                // for loop ensures every card gets shuffled
+                // generates a random index between j and i
+                    int temp = shuffleNum.get(j);
+                    
+                    // swap the card at deck[j] and the card at deck[i]
+    }
 }
 
-
-
-
-
-}
