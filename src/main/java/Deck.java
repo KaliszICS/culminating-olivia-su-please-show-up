@@ -88,7 +88,7 @@ public Deck(){
 
     public String toString(boolean isFlip){
         String out = "";
-        if(isFlip){
+        if(isFlip==false){
         for(int i = 0; i<this.frontDeck.size(); i++){
             out = out + this.frontDeck.get(i) +", ";
         }
@@ -136,6 +136,13 @@ public Deck(){
         }
             this.frontDeck = tempFront;
             this.backDeck = tempBack;        
+    }
+
+    public Card topCard(boolean isFlip){
+        if(isFlip){
+            return this.backDeck.get(0);
+        }
+        return this.frontDeck.get(0);
     }
 }
 
