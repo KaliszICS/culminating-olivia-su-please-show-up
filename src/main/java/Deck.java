@@ -77,20 +77,29 @@ public Deck(){
  * Returns the number of cards in the deck
  * @return the length/size of the deck
  */
-    public int size(){
-        return this.frontDeck.size();
+    public int size(boolean isFlip){
+        if(isFlip){
+            return this.backDeck.size();
+        }else{
+            return this.frontDeck.size();
+        }
+        
     }
 
-    public String toString(){
+    public String toString(boolean isFlip){
         String out = "";
+        if(isFlip){
         for(int i = 0; i<this.frontDeck.size(); i++){
             out = out + this.frontDeck.get(i) +", ";
         }
-        
+        return out;
+    }
+    else{
         for(int i = 0; i<this.backDeck.size(); i++){
             out = out + this.backDeck.get(i) +", ";
         }
         return out;
+    }
     }
 
     public Card draw(boolean isFlip){

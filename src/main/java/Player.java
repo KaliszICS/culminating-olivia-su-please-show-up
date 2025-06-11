@@ -104,8 +104,11 @@ public class Player{
             for(int j = 0; j < this.frontHand.size() - i - 1;j++){
                 if((this.frontHand.get(j)).getColour().compareTo((this.frontHand.get(j+1)).getColour()) > 0 ){
                     Card temp = this.frontHand.get(j);
+                    Card tempBack = this.backHand.get(j);
                     this.frontHand.set(j, this.frontHand.get(j + 1));
                     this.frontHand.set(j + 1, temp);
+                    this.backHand.set(j, this.backHand.get(j+1));
+                    this.backHand.set(j+1, tempBack);
                 }
             }
        }
@@ -117,8 +120,13 @@ public class Player{
             for(int j = 0; j < this.backHand.size() - i - 1;j++){
                 if((this.backHand.get(j)).getColour().compareTo((this.backHand.get(j+1)).getColour()) > 0 ){
                     Card temp = this.backHand.get(j);
+                    Card tempFront = this.frontHand.get(j);
+
                     this.backHand.set(j, this.backHand.get(j + 1));
                     this.backHand.set(j + 1, temp);
+
+                    this.frontHand.set(j, this.frontHand.get(j + 1));
+                    this.frontHand.set(j + 1, tempFront);
                 }
             }
        }

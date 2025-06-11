@@ -8,6 +8,8 @@ public class Main {
 	
 	Player pl = new Player("help", d);
 	System.out.println(pl.size());
+	System.out.println(pl.getBackHand().toString());
+	pl.organizeFront();
 	System.out.println(pl.toString());
 	}
 
