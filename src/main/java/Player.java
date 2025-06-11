@@ -111,6 +111,19 @@ public class Player{
        }
     }
 
+    public void organizeBack(){
+       
+       for(int i = 0; i < this.backHand.size() - 1; i++){
+            for(int j = 0; j < this.backHand.size() - i - 1;j++){
+                if((this.backHand.get(j)).getColour().compareTo((this.backHand.get(j+1)).getColour()) > 0 ){
+                    Card temp = this.backHand.get(j);
+                    this.backHand.set(j, this.backHand.get(j + 1));
+                    this.backHand.set(j + 1, temp);
+                }
+            }
+       }
+    }
+
 
 /**
 * Will print out their name and hand of cards
