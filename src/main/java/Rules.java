@@ -1,10 +1,14 @@
 public class Rules {
-    private boolean isReversed;
-    private boolean isFlip;
-    private Player[] players;
+    public boolean isReversed;
+    public boolean isFlip;
+    public Player player;
+    public Opponent computer;
+    public Deck deck;
 
-    public Rules(Player[] players){
-        this.players = players;
+    public Rules(Player player, Opponent opponent, Deck deck){
+        this.computer = opponent;
+        this.deck = deck;
+        this.player = player;
         this.isReversed = false;
         this.isFlip = false;
     }
