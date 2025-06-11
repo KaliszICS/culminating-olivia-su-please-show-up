@@ -10,8 +10,8 @@ import java.util.ArrayList;
 
 public class Player{
     private String name;
-    private ArrayList<Card> frontHand;
-    private ArrayList<Card> backHand;
+    public ArrayList<Card> frontHand;
+    public ArrayList<Card> backHand;
 
 
 /**
