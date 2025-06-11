@@ -17,13 +17,22 @@ public class Player{
 /**
 * Takes a name and array of cards which should be assigned to the hand
 * @param name is the name of player
-* @param hand the cards in the player's hand
+* @param front the front of the deck we're pulling cards from
+* @param back the back of the deck we're drawing cards from
 */
-   public Player(String name, ArrayList<Card> hand, ArrayList<Card> backHand){
+   public Player(String name, Deck deck){
 
         this.name = name;
-        this.frontHand = hand;
-        this.backHand = backHand;
+
+        for(int i = 0; i<7; i++){
+            ArrayList<String> help = new ArrayList<>(7);
+            
+            this.frontHand.add(deck.draw(false));
+            this.backHand.add(deck.draw(true));
+        }
+
+        // get the shuffled deck and draw cards to get the hand
+
 
     }
 
@@ -65,11 +74,10 @@ public class Player{
 * @param deck the deck that the card is taken from
 */
     public void draw(Deck deck){
-        Card drawnCard = deck.draw();
-        if (drawnCard == null){
-            return;
-        }
-        this.hand.add(drawnCard);
+        Card drawnCard = deck.draw(false);
+        Card drawnBack = deck.draw(true);
+        this.frontHand.add(drawnCard);
+        this.backHand.add(drawnBack);
     }
 
 /**
@@ -79,12 +87,15 @@ public class Player{
 * @param discardPile is the pile the card will be discarded into
 * @return returns the card taken out of the hand
 */
-    public Card RemoveCard(Card card, Deck discardPile){
-        if (card == null || this.hand.length == 0){
+    public String RemoveCard(int index, Deck discardPile){
+        if (this.frontHand.size() == 0){
             return null;
-        }
-            this.hand.remove(card);
-            return card;
+        }   
+        Card tempFront = frontHand.get(index);
+        Card tempBack = backHand.get(index);
+        this.frontHand.remove(index);
+        this.backHand.remove(index);
+        return tempFront.toString()+" "+tempBack.toString()+" removed.";
     }
 
 
@@ -100,12 +111,10 @@ public class Player{
 */
     public String toString(){
         String person = this.name;
-        if (this.hand.size == 0){
+        if (this.frontHand.size() == 0){
             return person;
         }
-        for (int i = 0; i < this.hand.size; i++){
-            person += ", " + this.hand.get(i).toString();
-        }
+        
         return person;
     }
 }
