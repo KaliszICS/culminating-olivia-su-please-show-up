@@ -23,10 +23,10 @@ public class Player{
    public Player(String name, Deck deck){
 
         this.name = name;
-
+         this.frontHand = new ArrayList<Card>();
+        this.backHand = new ArrayList<Card>();
         for(int i = 0; i<7; i++){
-            ArrayList<String> help = new ArrayList<>(7);
-            
+           
             this.frontHand.add(deck.draw(false));
             this.backHand.add(deck.draw(true));
         }
@@ -135,6 +135,6 @@ public class Player{
             return person;
         }
         
-        return person;
+        return person +"'s front Cards are " + this.frontHand.toString()+" and their back Cards are "+ this.backHand.toString();
     }
 }

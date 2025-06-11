@@ -5,7 +5,10 @@ public class Main {
 		
 		//System.out.println(d.toString());
 		d.shuffle();
-		System.out.println(d.toString());
+	
+	Player pl = new Player("help", d);
+	System.out.println(pl.size());
+	System.out.println(pl.toString());
 	}
 
 }
