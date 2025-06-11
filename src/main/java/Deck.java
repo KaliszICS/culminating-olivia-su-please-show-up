@@ -89,11 +89,11 @@ public Deck(){
 
         for (int j = 0; j < shuffleNum.size(); j++) {
                 int k = (int)(Math.random() * (j + 1));
-                // for loop ensures every card gets shuffled
-                // generates a random index between j and i
                     int temp = shuffleNum.get(j);
+                    shuffleNum.set(j, shuffleNum.get(k));
+                    shuffleNum.set(k, temp);
                     
-                    // swap the card at deck[j] and the card at deck[i]
+        }
     }
 }
 
