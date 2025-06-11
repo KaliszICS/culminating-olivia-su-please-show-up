@@ -27,44 +27,50 @@ public class Rules {
 
     public void reverse(){
         this.isReversed = !this.isReversed;
-        
+        System.out.println("Turn order is reversed!");
     }
     
     public void flip(){
         this.isFlip = !this.isFlip;
+        System.out.println("Cards Flipped!");
     }
 
     public void skipNextPlayer(){
-<<<<<<< HEAD
-      
-
-=======
-        
->>>>>>> 333caac (Javadocs)
+        System.out.println("Skipped the next player");
     }
 
     public void plusOne(){
-      
+      System.out.println("The next player have to draw one card");
 
     }
 
     public void wildCard(){
-
+        System.out.println("Colour changed, pick a colour:");
+        if(isFlip){
+            System.out.println("Pink, Teal, Orange, Purple");
+        }
+        else{
+            System.out.println("Red, Blue, Yellow, Green");
+        }
     }
 
     public void wildPlusTwo(){
-
+        System.out.println("Wild +2 card played!");
+        
     }
 
     public void plusFive(){
-
+         System.out.println("Opponent draws five cards!");
+        for (int i = 0; i < 5; i++) {
+            
+        }
     }
 
     public void skipEveryone(){
-
+    System.out.println("All players are skipped this round!");
     }
 
     public void wildPlusColourCard(){
-
+        System.out.println("Wild + Colour Change card played!");
     }
 }
