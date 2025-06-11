@@ -102,7 +102,7 @@ public class Player{
        
        for(int i = 0; i < this.frontHand.size() - 1; i++){
             for(int j = 0; j < this.frontHand.size() - i - 1;j++){
-                if(this.frontHand.get(j).compareTo(this.frontHand.get(j+1)) > 0 ){
+                if((this.frontHand.get(j)).getColour().compareTo((this.frontHand.get(j+1)).getColour()) > 0 ){
                     Card temp = this.frontHand.get(j);
                     this.frontHand.set(j, this.frontHand.get(j + 1));
                     this.frontHand.set(j + 1, temp);
