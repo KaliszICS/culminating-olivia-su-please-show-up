@@ -1,3 +1,7 @@
+/**
+ * The Rule class handles special rules and effects during the game.
+ */
+
 public class Rules {
     public boolean isReversed;
     public boolean isFlip;
@@ -23,14 +27,20 @@ public class Rules {
 
     public void reverse(){
         this.isReversed = !this.isReversed;
+        
     }
+    
     public void flip(){
         this.isFlip = !this.isFlip;
     }
 
     public void skipNextPlayer(){
+<<<<<<< HEAD
       
 
+=======
+        
+>>>>>>> 333caac (Javadocs)
     }
 
     public void plusOne(){

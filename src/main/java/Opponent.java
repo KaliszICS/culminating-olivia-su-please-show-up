@@ -1,9 +1,14 @@
 /**
+<<<<<<< HEAD
  * The Opponent class tells the computor what cards to place depending on the situation.
  * @author Kelly Fu, Olivia Su, Katherine Zhou, Cindy Pan
  * @version 17.0.1
  */
 
+=======
+ * Represents a computer-controlled opponent.
+ */
+>>>>>>> b40b881 (Javadocs)
 public class Opponent extends Player {
     private Card shouldPlay;
     public Opponent(String name, Deck deck){
