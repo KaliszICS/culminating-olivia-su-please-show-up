@@ -32,7 +32,7 @@ public class Rules {
 
 
      /**
-     * Gets whether the turn order is reversed
+     * Gets whether the turn order is reversed.
      * @return true if reversed, false otherwise
      */
     public boolean getIsReversed(){
@@ -40,15 +40,15 @@ public class Rules {
     }
 
     /**
-     * Gets whether the game is in flip mode
+     * Gets whether the game is in flip mode.
      * @return true if in flip mode, false otherwise
      */
     public boolean getIsFlip(){
         return this.isFlip;
     }
 
-     /**
-     * Reverses the turn order
+    /**
+     * Reverses the turn order.
      */
     public void reverse(){
         this.isReversed = !this.isReversed;
@@ -57,7 +57,7 @@ public class Rules {
     
 
     /**
-     * Toggles flip mode (could mean changing sides, day/night deck, etc.)
+     * Toggles flip mode (could mean changing sides, day/night deck, etc.).
      */
     public void flip(){
         this.isFlip = !this.isFlip;
@@ -65,7 +65,7 @@ public class Rules {
     }
 
     /**
-     * Skips the next player's turn
+     * Skips the next player's turn.
      */
     public void skipNextPlayer(){
         System.out.println("Skipped the next player");
@@ -73,7 +73,7 @@ public class Rules {
 
 
     /**
-     * Makes the opponent or player draw one card
+     * Makes the opponent or player draw one card.
      */
     public void plusOne(){
       System.out.println("The next player have to draw one card");
@@ -81,7 +81,7 @@ public class Rules {
     }
 
      /**
-     * Handles a wild card play (lets user choose new colour)
+     * Handles a wild card play (lets user choose new colour).
      */
     public void wildCard(){
         System.out.println("Colour changed, pick a colour:");
@@ -95,7 +95,7 @@ public class Rules {
 
 
     /**
-     * Handles a wild card that also makes opponent draw 2 cards
+     * Handles a wild card that also makes opponent draw 2 cards.
      */
     public void wildPlusTwo(){
         System.out.println("Wild +2 card played!");
@@ -103,7 +103,7 @@ public class Rules {
     }
 
     /**
-     * Makes the opponent draw five cards
+     * Makes the opponent or player draw five cards.
      */
     public void plusFive(){
          System.out.println("Opponent draws five cards!");
@@ -113,7 +113,7 @@ public class Rules {
     }
 
     /**
-     * Skips all players (special condition, often custom rule)
+     * Skips all players (special condition, often custom rule).
      */
     public void skipEveryone(){
     System.out.println("All players are skipped this round!");

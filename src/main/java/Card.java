@@ -1,5 +1,5 @@
 /**
- * The Card class represents the card's colour and type.
+ * The Card class represents the card's colour and type
  * @author Kelly Fu, Olivia Su, Katherine Zhou, Cindy Pan
  * @version 17.0.1
  */
