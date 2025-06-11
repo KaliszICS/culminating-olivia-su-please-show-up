@@ -29,12 +29,12 @@ public class Rules {
     }
 
     public void skipNextPlayer(){
-        this.skipNextPlayer = !this.skipNexPlayer;
+      
 
     }
 
     public void plusOne(){
-        this.plusOne = !this.plusOne;
+      
 
     }
 
