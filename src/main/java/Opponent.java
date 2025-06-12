@@ -17,10 +17,11 @@ public Card getShouldPlay(){
 }
 
 /**
- * Takes the colour and type for the top card in play.
- * @param topCard
- * @param humanPlayer
- * @return
+ * Checks if most recently played card is a draw card
+ * Tells computor to place a Draw1, draw2, Draw5, or drawColour to stack
+ * @param topCard most recently played card
+ * @param humanPlayer you, the player
+ * @return play card from your hand
  */
     public String chooseCardToPlay(Card topCard, Player humanPlayer){
         boolean lowOnCards = humanPlayer.getFrontHand().size() <= 3;
@@ -34,6 +35,11 @@ public Card getShouldPlay(){
                     return "play this card";
                 }
             }
+
+            /**
+            *Checks if oppponent is low on cards
+            *Tells computor to place a Draw1, draw2, Draw5, or drawColour available in hand
+             */
         }else if(lowOnCards){
             for(int i = 0; i < getFrontHand().size(); i++){
                 String type = getFrontHand().get(i).getType();
@@ -41,17 +47,28 @@ public Card getShouldPlay(){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
 
+                    /**
+                     * If no types of draw cards, place reverse, skip, or SkipEveryone
+                     */
                     }else if(topType.equals("Reverse") || topType.equals("skip") || topType.equals("SkipEveryone")){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
 
                 }
             }
+
+            /**
+             * checks if hand is greater than 0
+             * Places card that matches colour of top card
+             */
         }else if(getFrontHand().size()>0){
             for(int i = 0; i< getFrontHand().size(); i++){
                 if (getFrontHand().get(i).getType().equals(topColour)){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
+                    /**
+                     * Places card that matches number
+                     */
                 }else if(getFrontHand().get(i).getType().equals(topType)){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
