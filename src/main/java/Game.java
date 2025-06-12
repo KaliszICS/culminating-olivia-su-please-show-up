@@ -45,7 +45,7 @@ class Game{
     public String playable(){
         if(this.isPlayerTurn){
             this.isPlayerTurn = !isPlayerTurn;
-            for (int i=0; i<this.player.size(); i++){
+            for (int i=0; i<9; i++){
                 if(this.player.frontHand.get(i).equals(this.topCard)){
                     System.out.println("Select a card to play!");
                     System.out.println(this.player.toString()+" Put in the index for the cards, starting from 0");
@@ -54,7 +54,6 @@ class Game{
                 }
                 else{
                     this.player.draw(deck);
-                   
                     return "no card to play, draw a card, "+ this.player.toString();
                     
                 }
