@@ -61,7 +61,8 @@ public Card getShouldPlay(){
                 }
             }
         }else{
-            draw();
+            //.draw();
+            return "No card to play";
         }
 
     }
