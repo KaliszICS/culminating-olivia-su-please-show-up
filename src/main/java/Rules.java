@@ -98,7 +98,14 @@ public class Rules {
      * Handles a wild card that also makes opponent draw 2 cards.
      */
     public void wildPlusTwo(){
-        System.out.println("Wild +2 card played!");
+        System.out.println("Wild +2 card played!, Next player draws 2 card, pick a colour!");
+        if(isFlip){
+            System.out.println("Pink, Teal, Orange, Purple");
+        }
+
+        else{
+            System.out.println("Red, Blue, Yellow, Green");
+        }
         
     }
 
@@ -106,10 +113,8 @@ public class Rules {
      * Makes the opponent or player draw five cards.
      */
     public void plusFive(){
-         System.out.println("Opponent draws five cards!");
-        for (int i = 0; i < 5; i++) {
-            
-        }
+         System.out.println("Draw five card played! next player draws five cards!");
+       
     }
 
     /**
@@ -123,6 +128,12 @@ public class Rules {
      * Handles a wild card that changes colour and adds extra effect
      */
     public void wildPlusColourCard(){
-        System.out.println("Wild + Colour Change card played!");
+        System.out.println("Wild + Colour Change card played!, pick a colour!");
+        if(isFlip){
+            System.out.println("Pink, Teal, Orange, Purple");
+        }
+        else{
+            System.out.println("Red, Blue, Yellow, Green");
+        }
     }
 }

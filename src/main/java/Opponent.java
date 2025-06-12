@@ -4,6 +4,12 @@
  * @version 17.0.1
  */
 
+<<<<<<< HEAD
+=======
+/* 
+ * Represents a computer-controlled opponent.
+ */
+>>>>>>> 60a7f94 (Update)
 public class Opponent extends Player {
     private Card shouldPlay;
     public Opponent(String name, Deck deck){

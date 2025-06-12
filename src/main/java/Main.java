@@ -4,21 +4,24 @@
  * @author Kelly Fu, Olivia Su, Katherine Zhou, Cindy Pan
  * @version 17.0.1
  */
-
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Main {
 
 	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your name!");
+		String name = sc.nextLine();
 		Deck d = new Deck();
+		ArrayList<Card> empty = new ArrayList<>();
+		Deck pile = new Deck(empty, empty);
+		Player pl = new Player(name, d);
+		Opponent p = new Opponent("Computer", d);
+		Game uno = new Game(pl, p, d, pile);
 		
-		//System.out.println(d.toString());
-		d.shuffle();
-	//prints the size of the deck
-	//prints the back cards of your hand
-	Player pl = new Player("help", d);
-	System.out.println(pl.size());
-	System.out.println(pl.getBackHand().toString());
-	pl.organizeFront();
-	System.out.println(pl.toString());
+
+		
+
 	}
 
 }
