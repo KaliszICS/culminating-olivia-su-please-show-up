@@ -13,6 +13,7 @@ public class Main {
 		System.out.println("Enter your name!");
 		String name = sc.nextLine();
 		Deck d = new Deck();
+		d.shuffle();
 		ArrayList<Card> empty = new ArrayList<>();
 		Deck pile = new Deck(empty, empty);
 		Player pl = new Player(name, d);
@@ -26,16 +27,20 @@ public class Main {
 	
 		if(uno.getIsPlayerTurn()){
 		System.out.println(uno.playable());
-		int index = sc.nextInt();
+		if (uno.getIsPlayerTurn())
+		{int index = sc.nextInt();
 		
 		uno.playCard(pl.backHand.get(index));
 		uno.gameWon();
+		}
 		
 		}
 		else{
 			System.out.println("Computers turn!");
 			uno.playCard(null);
 			uno.gameWon();
+			uno.setIsPlayerTurn(true);
+			
 		}
 	
 	

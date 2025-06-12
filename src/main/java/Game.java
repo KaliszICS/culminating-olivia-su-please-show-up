@@ -38,6 +38,9 @@ class Game{
     public boolean getIsPlayerTurn(){
         return this.isPlayerTurn;
     }
+    public void setIsPlayerTurn(boolean set){
+        this.isPlayerTurn = set;
+    }
 
     public String playable(){
         if(this.isPlayerTurn){
@@ -51,13 +54,14 @@ class Game{
                 }
                 else{
                     this.player.draw(deck);
-                    return "no card to play, draw a card";
+                   
+                    return "no card to play, draw a card, "+ this.player.toString();
                     
                 }
             }
         }
         
-            
+            this.isPlayerTurn = true;
             return "Computer's turn, wait.";
         
 

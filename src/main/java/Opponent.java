@@ -6,6 +6,7 @@
 
 public class Opponent extends Player {
     private Card shouldPlay;
+
     public Opponent(String name, Deck deck){
         super(name, deck);
         this.shouldPlay = deck.topCard(false); 
@@ -49,21 +50,18 @@ public Card getShouldPlay(){
         }else if(getFrontHand().size()>0){
             for(int i = 0; i< getFrontHand().size(); i++){
                 if (getFrontHand().get(i).getType().equals(topColour)){
-<<<<<<< HEAD
                     this.shouldPlay = this.frontHand.get(i);
-=======
-                    shouldPlay = this.frontHand.get(i);
->>>>>>> 7d047e9 (update something)
                     return "play this card";
                 }else if(getFrontHand().get(i).getType().equals(topType)){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
                 }
             }
-        }else{
+        }
+        
             //.draw();
             return "No card to play";
-        }
+        
 
     }
 }
