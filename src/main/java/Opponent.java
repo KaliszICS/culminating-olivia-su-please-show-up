@@ -23,14 +23,14 @@ public class Opponent extends Player {
         String topType = topCard.getType();
 
         if(topType.equals("Draw1") || topType.equals("draw2") || topType.equals("Draw5") || topType.equals("drawColour")){
-            for(int i = 0; i< size(); i++){
+            for(int i = 0; i< getFrontHand().size(); i++){
                 if(getFrontHand().get(i).getType().equals(topType)){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
                 }
             }
         }else if(lowOnCards){
-            for(int i = 0; i < size(); i++){
+            for(int i = 0; i < getFrontHand().size(); i++){
                 String type = getFrontHand().get(i).getType();
                 if (topType.equals("Draw1") || topType.equals("draw2") || topType.equals("Draw5") || topType.equals("drawColour")){
                     this.shouldPlay = this.frontHand.get(i);
@@ -42,8 +42,8 @@ public class Opponent extends Player {
 
                 }
             }
-        }else if(size()>0){
-            for(int i = 0; i< size(); i++){
+        }else if(getFrontHand().size()>0){
+            for(int i = 0; i< getFrontHand().size(); i++){
                 if (getFrontHand().get(i).getType().equals(topColour)){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
