@@ -4,12 +4,6 @@
  * @version 17.0.1
  */
 
-<<<<<<< HEAD
-=======
-/* 
- * Represents a computer-controlled opponent.
- */
->>>>>>> 60a7f94 (Update)
 public class Opponent extends Player {
     private Card shouldPlay;
     public Opponent(String name, Deck deck){
@@ -17,6 +11,10 @@ public class Opponent extends Player {
         this.shouldPlay = deck.topCard(false); 
     }
     
+public Card getShouldPlay(){
+    return this.shouldPlay;
+}
+
 /**
  * Takes the colour and type for the top card in play.
  * @param topCard
@@ -51,7 +49,11 @@ public class Opponent extends Player {
         }else if(getFrontHand().size()>0){
             for(int i = 0; i< getFrontHand().size(); i++){
                 if (getFrontHand().get(i).getType().equals(topColour)){
+<<<<<<< HEAD
                     this.shouldPlay = this.frontHand.get(i);
+=======
+                    shouldPlay = this.frontHand.get(i);
+>>>>>>> 7d047e9 (update something)
                     return "play this card";
                 }else if(getFrontHand().get(i).getType().equals(topType)){
                     this.shouldPlay = this.frontHand.get(i);

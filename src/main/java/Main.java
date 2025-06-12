@@ -18,7 +18,30 @@ public class Main {
 		Player pl = new Player(name, d);
 		Opponent p = new Opponent("Computer", d);
 		Game uno = new Game(pl, p, d, pile);
+		boolean win = false;
 		
+
+		while (win ==false){
+
+	
+		if(uno.getIsPlayerTurn()){
+		System.out.println(uno.playable());
+		int index = sc.nextInt();
+		
+		uno.playCard(pl.backHand.get(index));
+		uno.gameWon();
+		
+		}
+		else{
+			System.out.println("Computers turn!");
+			uno.playCard(null);
+			uno.gameWon();
+		}
+	
+	
+	
+	}
+
 
 		
 
