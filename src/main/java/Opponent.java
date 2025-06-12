@@ -29,18 +29,32 @@ public class Opponent extends Player {
                     return "play this card";
                 }
             }
-        }
-
-        if(lowOnCards){
+        }else if(lowOnCards){
             for(int i = 0; i < getFrontHand().size(); i++){
                 String type = getFrontHand().get(i).getType();
                 if (topType.equals("Draw1") || topType.equals("draw2") || topType.equals("Draw5") || topType.equals("drawColour")){
                     this.shouldPlay = this.frontHand.get(i);
                     return "play this card";
+
+                    }else if(topType.equals("Reverse") || topType.equals("skip") || topType.equals("SkipEveryone")){
+                    his.shouldPlay = this.frontHand.get(i);
+                    return "play this card";
+
                 }
             }
+        }else if(getFrontHand().size()>0){
+            for(int i = 0; i< getFrontHand().size(); i++){
+                if (getFrontgetFrontHand().get(i).getType().equals(topColour)){
+                    shouldPlay = this.frontHand.get(i);
+                    return "play this card";
+                }else if(getFrontHand().get(i).getType().equals(topType)){
+                    shouldPlay = this.frontHand.get(i);
+                    return "play this card";
+                }
+            }
+        }else{
+            draw();
         }
-        return "play any card";
 
     }
 }
