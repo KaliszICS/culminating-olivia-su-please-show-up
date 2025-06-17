@@ -1,0 +1,8 @@
+Rules should have a composition arrow to Deck.
+Deck should have a composition arrow to Card
+Computer should have a composition arrow to Deck.
+I'm not sure how game has a relationship to Rules (I think honestly Rules should be the game though).
+Your rules class has a lot of methods that seem unnecessary and should be on the Cards themselves as an effect.
+Also there does not seem to be any methods that have to do with uno flip variation (back of cards, flipping hand etc.)
+
+70

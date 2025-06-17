@@ -1,0 +1,15 @@
+I think a lot of problems come from creating two different arrays for your cards.  Instead making the cards hold the front and back values would have made it much simpler (These can swap when the card is flipped).
+Also, I would have focused on making it a player versus player game first, then make computers after, would have focused your efforts on getting things working quicker.
+Remove card from hand check for empty hand is probably unneeded since they would have won if they had no cards.
+Although you never made it to getting the game work you have a lot of good things in your code!
+In the future, break things down and work on them slowly without trying to over complicate them.
+Also when making a turn based game, I would highly recommend using a turn counter and mod by the number of players to figure out whose turn it is.
+You can then store players in a array to access each of them on their turns.
+You do appear to be missing polymorphism and file reading and writing though.
+
+K(30%): 80%
+I(30%): 50%
+C(10%): 100%
+A(30%): 50%
+
+64%
